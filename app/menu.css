@@ -1,0 +1,3 @@
+#burgerMenu:popover-open {
+  @apply flex h-[calc(100%-130px)];
+}

@@ -10,6 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #db2777;
+  --color-danger: #b91c1c;
+  --animate-bounce-once: bounce 500ms 1;
 }
 
 @media (prefers-color-scheme: dark) {
