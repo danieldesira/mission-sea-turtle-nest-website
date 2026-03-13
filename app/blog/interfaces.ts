@@ -31,3 +31,15 @@ interface Author {
   avatar_URL?: string;
   profile_URL?: string;
 }
+
+export interface GetPostRepliesResponse {
+  found?: number;
+  comments?: Comment[];
+}
+
+interface Comment {
+  ID?: number;
+  date?: string;
+  content?: string;
+  author?: Author;
+}

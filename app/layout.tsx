@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { GitHub, Instagram, LinkedIn, YouTube } from "@deemlol/next-icons";
 import Menu from "./menu";
 import Image from "next/image";
-import { ComponentType, SVGProps } from "react";
+import { IconType } from "react-icons";
+import { FaGithub, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 type SocialIcon = {
-  Icon: ComponentType<SVGProps<SVGSVGElement>>;
+  Icon: IconType;
   url: string;
 };
 
@@ -33,16 +33,16 @@ export default function RootLayout({
 }>) {
   const socialIcons = [
     {
-      Icon: Instagram,
+      Icon: FaInstagram,
       url: "https://www.instagram.com/turtlequest.webgame/",
     },
-    { Icon: YouTube, url: "https://www.youtube.com/@SeaTurtleQuestGame" },
+    { Icon: FaYoutube, url: "https://www.youtube.com/@SeaTurtleQuestGame" },
     {
-      Icon: LinkedIn,
+      Icon: FaLinkedin,
       url: "https://www.linkedin.com/in/daniel-desira-50045b97/",
     },
     {
-      Icon: GitHub,
+      Icon: FaGithub,
       url: "https://github.com/danieldesira/MissionSeaTurtleNest",
     },
   ] satisfies SocialIcon[];

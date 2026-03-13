@@ -3,7 +3,7 @@
 import Link from "next/link";
 import "./menu.css";
 import { useRef } from "react";
-import { Menu as MenuIcon } from "@deemlol/next-icons";
+import { IoMenu } from "react-icons/io5";
 
 type MenuItem = { url: string; label: string };
 
@@ -36,7 +36,7 @@ export default function Menu() {
           className="border border-white rounded-sm"
           popoverTarget="burgerMenu"
         >
-          <MenuIcon className="w-8 h-8" />
+          <IoMenu className="w-8 h-8" />
         </button>
       </menu>
       <dialog
