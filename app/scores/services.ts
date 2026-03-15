@@ -1,6 +1,7 @@
-import { ScoresResponse } from "./interfaces";
+import { createQueryString } from "../common/utils";
+import { ScoresOptions, ScoresResponse } from "./interfaces";
 
-export const getScores = async () => {
-  const res = await fetch("/api/scores");
+export const getScores = async (filters: ScoresOptions) => {
+  const res = await fetch(`api/scores?${createQueryString(filters)}`);
   return (await res.json()) as ScoresResponse;
 };

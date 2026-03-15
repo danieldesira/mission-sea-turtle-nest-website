@@ -1,26 +1,22 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import Dropdown from "../common/dropdown";
 import FilterField from "../common/filter-field";
-import { ScoresOptions } from "./interfaces";
-import { useRouter } from "next/navigation";
+import { ScoresOptions, ScoresResponse } from "./interfaces";
 import Paginator from "../common/paginator";
 import ScoreTable from "./score-table";
 import { getScores } from "./services";
 
-const scoresPromise = getScores();
-
 export default function Scores() {
-  const router = useRouter();
-
   const [filters, setFilters] = useState<ScoresOptions>({
     juniors: false,
     page: 1,
     items: 10,
   });
 
-  const { scores, totalPages, currentPage } = use(scoresPromise);
+  const [{ scores, totalPages, currentPage }, setScoreData] =
+    useState<ScoresResponse>({ scores: [], totalPages: 0, currentPage: 1 });
 
   const handleOutcomeChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
     setFilters((prev) => ({
@@ -39,13 +35,8 @@ export default function Scores() {
     setFilters((prev) => ({ ...prev, juniors: event.target.checked, page: 1 }));
 
   useEffect(() => {
-    router.push(
-      `/scores?${Object.entries(filters)
-        .filter(([, value]) => value)
-        .map(([key, value]) => `${key}=${value === true ? "1" : value}`)
-        .join("&")}`,
-    );
-  }, [filters, router]);
+    getScores(filters).then((data) => setScoreData(data));
+  }, [filters]);
 
   return (
     <div className="flex flex-col gap-3">

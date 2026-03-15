@@ -1,6 +1,9 @@
-export async function GET() {
+import { NextRequest } from "next/server";
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
   const scoreRes = await fetch(
-    "https://turtle-quest-api.vercel.app/api/scores",
+    `https://turtle-quest-api.vercel.app/api/scores?${searchParams.toString()}`,
   );
   if (scoreRes.ok) {
     return new Response(JSON.stringify(await scoreRes.json()));
