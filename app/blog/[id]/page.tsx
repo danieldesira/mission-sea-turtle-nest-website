@@ -6,7 +6,8 @@ import { Post } from "../interfaces";
 import CommentSection from "./comment-section";
 
 export default async function PostPage({ params }: PageQueryProps) {
-  const post = (await getSinglePost((await params).id)) as Post;
+  const postId = (await params).id;
+  const post = (await getSinglePost(postId)) as Post;
 
   return (
     <div className="flex flex-col gap-3">
