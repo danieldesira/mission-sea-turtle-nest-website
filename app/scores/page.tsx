@@ -5,18 +5,22 @@ import Dropdown from "../common/dropdown";
 import FilterField from "../common/filter-field";
 import { ScoresOptions } from "./interfaces";
 import { useRouter } from "next/navigation";
-import ScoreTable from "./score-table";
 import Paginator from "../common/paginator";
+import ScoreTable from "./score-table";
 import { getScores } from "./services";
+
+const scoresPromise = getScores();
 
 export default function Scores() {
   const router = useRouter();
-  const { scores, currentPage, totalPages } = use(getScores());
+
   const [filters, setFilters] = useState<ScoresOptions>({
     juniors: false,
     page: 1,
     items: 10,
   });
+
+  const { scores, totalPages, currentPage } = use(scoresPromise);
 
   const handleOutcomeChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
     setFilters((prev) => ({
