@@ -3,7 +3,7 @@ import { formatDate } from "@/app/common/utils";
 import { getSinglePost } from "../services";
 import { PageQueryProps } from "@/app/types";
 import { Post } from "../interfaces";
-import CommentSectionWrapper from "./comment-section-wrapper";
+import CommentSection from "./comment-section";
 
 export default async function PostPage({ params }: PageQueryProps) {
   const post = (await getSinglePost((await params).id)) as Post;
@@ -21,7 +21,7 @@ export default async function PostPage({ params }: PageQueryProps) {
         <span className="font-light text-lg">{post.author?.nice_name}</span>
         <span className="font-light text-sm">{formatDate(post.modified!)}</span>
       </article>
-      <CommentSectionWrapper id={post.ID!} />
+      <CommentSection id={post.ID!} title={post.title!} url={post.URL!} />
     </div>
   );
 }
