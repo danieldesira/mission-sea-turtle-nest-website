@@ -1,6 +1,11 @@
 "use client";
 
-import { DiscussionEmbed } from "disqus-react";
+import dynamic from "next/dynamic";
+
+const DiscussionEmbed = dynamic(
+  () => import("disqus-react").then((m) => m.DiscussionEmbed),
+  { ssr: false },
+);
 
 type Props = {
   id: number;
