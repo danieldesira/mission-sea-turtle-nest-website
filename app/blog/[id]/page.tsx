@@ -22,7 +22,7 @@ export default async function PostPage({ params }: PageQueryProps) {
         <span className="font-light text-lg">{post.author?.nice_name}</span>
         <span className="font-light text-sm">{formatDate(post.modified!)}</span>
       </article>
-      <CommentSection id={post.ID!} title={post.title!} url={post.URL!} />
+      {/* <CommentSection id={post.ID!} title={post.title!} url={post.URL!} /> */}
     </div>
   );
 }
