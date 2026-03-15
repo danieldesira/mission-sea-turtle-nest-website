@@ -40,15 +40,15 @@ export default function ScoreTable({ scores }: Props) {
               className={index % 2 ? "bg-gray-600 text-white" : ""}
             >
               <td className="p-2">
-                {/* {playerProfilePicUrl && (
-                  // <Image
-                  //   width={200}
-                  //   height={200}
-                  //   className="w-8 h-8 rounded-sm m-auto"
-                  //   src={playerProfilePicUrl}
-                  //   alt="Player picture"
-                  // />
-                )} */}
+                {playerProfilePicUrl && (
+                  <Image
+                    width={200}
+                    height={200}
+                    className="w-8 h-8 rounded-sm m-auto"
+                    src={playerProfilePicUrl}
+                    alt="Player picture"
+                  />
+                )}
               </td>
               <td className="p-2 text-center">{playerName}</td>
               <td className="p-2 text-right">{playerAge}</td>
