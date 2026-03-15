@@ -14,8 +14,8 @@ export default function Home() {
           team, as well as manual labour such as digging trenches on part of
           volunteers including myself has undoubtedly resulted in better
           numbers. Needless to say, the knowledge acquired from this experience
-          and the people I`&apos`ve met through this journey, have inspired me to
-          build this game from a mama turtle`&apos`s perspective.
+          and the people I&apos;ve met through this journey, have inspired me to
+          build this game from a mama turtle&apos;s perspective.
         </p>
         <a
           href="https://turtle-quest.vercel.app/"
@@ -30,7 +30,7 @@ export default function Home() {
           Josette Darmenia, Stephen Spiteri, Ana Feder, Sheila Adams, Joanna
           Pullicino Kent, Rachel Doyle, Roberta Farrugia Debono, Glenn Brough,
           Joe Conti, Corrine Wood, Liza Sountsova, Kamilla Boross and Liz
-          Gowland-Camilleri. And many others - it`&apos`s impossible to list them all
+          Gowland-Camilleri. And many others - it&apos;s impossible to list them all
           here! These people have selflessly dedicated their time for
           safeguarding biodiversity and for that I wish to thank them
           wholeheartedly.
