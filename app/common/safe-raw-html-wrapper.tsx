@@ -1,3 +1,5 @@
+"use client";
+
 import DOMPurify from "isomorphic-dompurify";
 
 type Props = { html: string };

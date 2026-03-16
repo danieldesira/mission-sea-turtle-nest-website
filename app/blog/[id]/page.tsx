@@ -1,4 +1,4 @@
-//import SafeRawHtmlWrapper from "@/app/common/safe-raw-html-wrapper";
+import SafeRawHtmlWrapper from "@/app/common/safe-raw-html-wrapper";
 import { formatDate } from "@/app/common/utils";
 import { getSinglePost } from "../services";
 import { PageQueryProps } from "@/app/types";
@@ -18,7 +18,7 @@ export default async function PostPage({ params }: PageQueryProps) {
         <h2 className="text-2xl font-bold">{post.title}</h2>
       </header>
       <article className="flex flex-col p-2 gap-2">
-        {/* <SafeRawHtmlWrapper html={post.content!} /> */}
+        <SafeRawHtmlWrapper html={post.content!} />
         <span className="font-light text-lg">{post.author?.nice_name}</span>
         <span className="font-light text-sm">{formatDate(post.modified!)}</span>
       </article>
