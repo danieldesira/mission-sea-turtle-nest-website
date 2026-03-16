@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import "./menu.css";
@@ -12,6 +12,7 @@ export default function Menu() {
     { url: "/", label: "Home" },
     { url: "/scores", label: "Scores" },
     { url: "/blog", label: "Blog" },
+    { url: "/about", label: "About" },
   ] satisfies MenuItem[];
 
   const burgerMenuRef = useRef<HTMLDialogElement>(null);
