@@ -1,3 +1,3 @@
 export type PageQueryProps = {
-  params: { id: number };
+  params: Promise<{ id: number }>;
 };

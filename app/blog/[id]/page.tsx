@@ -2,12 +2,17 @@ import SafeRawHtmlWrapper from "@/app/common/safe-raw-html-wrapper";
 import { formatDate } from "@/app/common/utils";
 import { getSinglePost } from "../services";
 import { PageQueryProps } from "@/app/types";
-import { Post } from "../interfaces";
 import CommentSection from "./comment-section";
+
+export async function generateMetadata({ params }: PageQueryProps) {
+  const postId = (await params).id;
+  const { title, excerpt } = await getSinglePost(postId);
+  return { title, description: excerpt };
+}
 
 export default async function PostPage({ params }: PageQueryProps) {
   const postId = (await params).id;
-  const post = (await getSinglePost(postId)) as Post;
+  const post = await getSinglePost(postId);
 
   return (
     <div className="flex flex-col gap-3">
