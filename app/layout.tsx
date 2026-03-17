@@ -26,27 +26,27 @@ type SocialIcon = {
   url: string;
 };
 
+const socialIcons = [
+  {
+    Icon: FaInstagram,
+    url: "https://www.instagram.com/turtlequest.webgame/",
+  },
+  { Icon: FaYoutube, url: "https://www.youtube.com/@SeaTurtleQuestGame" },
+  {
+    Icon: FaLinkedin,
+    url: "https://www.linkedin.com/in/daniel-desira-50045b97/",
+  },
+  {
+    Icon: FaGithub,
+    url: "https://github.com/danieldesira/MissionSeaTurtleNest",
+  },
+] satisfies SocialIcon[];
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const socialIcons = [
-    {
-      Icon: FaInstagram,
-      url: "https://www.instagram.com/turtlequest.webgame/",
-    },
-    { Icon: FaYoutube, url: "https://www.youtube.com/@SeaTurtleQuestGame" },
-    {
-      Icon: FaLinkedin,
-      url: "https://www.linkedin.com/in/daniel-desira-50045b97/",
-    },
-    {
-      Icon: FaGithub,
-      url: "https://github.com/danieldesira/MissionSeaTurtleNest",
-    },
-  ] satisfies SocialIcon[];
-
   return (
     <html lang="en">
       <body
