@@ -16,6 +16,7 @@ export default function Checkbox({ id, label }: Props) {
     const url = new URL(location.href);
     if (checked) {
       url.searchParams.set(name, "1");
+      url.searchParams.delete("page");
     } else {
       url.searchParams.delete(name);
     }

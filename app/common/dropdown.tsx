@@ -19,6 +19,7 @@ export default function Dropdown({ id, label, options }: Props) {
     const url = new URL(location.href);
     if (value) {
       url.searchParams.set(name, value);
+      url.searchParams.delete("page");
     } else {
       url.searchParams.delete(name);
     }
