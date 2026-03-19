@@ -1,5 +1,5 @@
+import Checkbox from "../common/checkbox";
 import Dropdown from "../common/dropdown";
-import FilterField from "../common/filter-field";
 import Paginator from "../common/paginator";
 import ScoreTable from "./score-table";
 import { getScores } from "./services";
@@ -31,18 +31,7 @@ export default async function Scores({
               { label: "Losses", value: "loss" },
             ]}
           />
-          <FilterField>
-            <label htmlFor="juniors-checkbox" className="text-sm font-semibold">
-              Juniors only (Under 16)
-            </label>
-            <input
-              type="checkbox"
-              id="juniors-checkbox"
-              name="juniors-checkbox"
-              className="appearance-none checked:bg-primary w-4 h-4 rounded-sm focus:ring-1 focus:ring-primary border border-primary"
-            />
-          </FilterField>
-          <input type="hidden" name="page" />
+          <Checkbox id="juniors" label="Juniors only (Under 16)" />
         </section>
       </header>
       {scores.length ? (
