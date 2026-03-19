@@ -1,21 +1,21 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 type Props = {
   currentPage: number;
   totalPages: number;
-  //onPageChange: (page: number) => void;
 };
 
-export default function Paginator({
-  currentPage,
-  totalPages,
- // onPageChange,
-}: Props) {
+export default function Paginator({ currentPage, totalPages }: Props) {
+  const router = useRouter();
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const page = Number(event.currentTarget.dataset.page);
-    //onPageChange(page);
+    const url = new URL(location.href);
+    url.searchParams.set("page", page.toString());
+    router.push(url.toString());
   };
 
   return (

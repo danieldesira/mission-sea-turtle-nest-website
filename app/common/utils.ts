@@ -19,7 +19,7 @@ export const formatDate = (input: string) => {
 export const createQueryString = (filters: ScoresOptions) => {
   const searchParams = new URLSearchParams();
   for (const [key, value] of Object.entries(filters)) {
-    if (value !== false) {
+    if (value) {
       searchParams.set(key, value);
     }
   }

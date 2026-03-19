@@ -4,12 +4,18 @@ import Paginator from "../common/paginator";
 import ScoreTable from "./score-table";
 import { getScores } from "./services";
 
-export default async function Scores() {
+export default async function Scores({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}) {
+  const params = await searchParams;
   const { scores, totalPages, currentPage } = await getScores({
-    page: 1,
+    page: parseInt(params["page"] ?? "1"),
     items: 10,
-    juniors: false,
-  })
+    juniors: !!params["juniors"],
+    outcome: params["outcome"]?.toUpperCase() as "WIN" | "LOSS" | undefined,
+  });
 
   return (
     <div className="flex flex-col gap-3">
@@ -48,10 +54,7 @@ export default async function Scores() {
           No scores found yet... Please broaden your filters!
         </span>
       )}
-      <Paginator
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
+      <Paginator currentPage={currentPage} totalPages={totalPages} />
     </div>
   );
 }
