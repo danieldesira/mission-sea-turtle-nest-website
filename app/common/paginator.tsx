@@ -1,19 +1,21 @@
+"use client";
+
 type Props = {
   currentPage: number;
   totalPages: number;
-  onPageChange: (page: number) => void;
+  //onPageChange: (page: number) => void;
 };
 
 export default function Paginator({
   currentPage,
   totalPages,
-  onPageChange,
+ // onPageChange,
 }: Props) {
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const page = Number(event.currentTarget.dataset.page);
-    onPageChange(page);
+    //onPageChange(page);
   };
 
   return (

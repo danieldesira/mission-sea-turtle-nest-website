@@ -5,13 +5,13 @@ import { PageQueryProps } from "@/app/types";
 import CommentSection from "./comment-section";
 
 export async function generateMetadata({ params }: PageQueryProps) {
-  const postId = (await params).id;
+  const { id: postId } = await params;
   const { title, excerpt } = await getSinglePost(postId);
   return { title, description: excerpt };
 }
 
 export default async function PostPage({ params }: PageQueryProps) {
-  const postId = (await params).id;
+  const { id: postId } = await params;
   const post = await getSinglePost(postId);
 
   return (

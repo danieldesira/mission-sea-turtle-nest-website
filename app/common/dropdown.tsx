@@ -1,3 +1,5 @@
+"use client";
+import { useRouter } from "next/navigation";
 import FilterField from "./filter-field";
 
 type Props = {
@@ -7,10 +9,22 @@ type Props = {
     label: string;
     value: string;
   }>;
-  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 };
 
-export default function Dropdown({ id, label, options, onChange }: Props) {
+export default function Dropdown({ id, label, options }: Props) {
+  const router = useRouter();
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    const url = new URL(location.href);
+    if (value) {
+      url.searchParams.set(name, value);
+    } else {
+      url.searchParams.delete(name);
+    }
+    router.push(url.toString());
+  };
+
   return (
     <FilterField>
       <label htmlFor={id} className="text-sm font-semibold">
@@ -20,7 +34,7 @@ export default function Dropdown({ id, label, options, onChange }: Props) {
         id={id}
         name={id}
         className="p-2 border border-primary rounded-sm"
-        onChange={onChange}
+        onChange={handleChange}
       >
         {options.map(({ label, value }) => (
           <option key={value} value={value} className="dark:bg-slate-900">
