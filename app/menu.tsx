@@ -4,10 +4,13 @@ import Link from "next/link";
 import "./menu.css";
 import { useRef } from "react";
 import { IoMenu } from "react-icons/io5";
+import { usePathname } from "next/navigation";
 
 type MenuItem = { url: string; label: string };
 
 export default function Menu() {
+  const currentRoute = usePathname();
+
   const menuItems = [
     { url: "/", label: "Home" },
     { url: "/scores", label: "Scores" },
@@ -21,8 +24,7 @@ export default function Menu() {
     <Link
       key={url}
       href={url}
-      className="hover:bg-pink-400 p-2 rounded-sm text-white text-lg font-bold"
-      onClick={() => burgerMenuRef.current?.hidePopover()}
+      className={`hover:bg-pink-400 py-2 px-10 rounded-sm text-white text-lg font-bold ${currentRoute === url ? "bg-pink-400" : ""}`}
     >
       {label}
     </Link>
@@ -44,9 +46,12 @@ export default function Menu() {
         id="burgerMenu"
         ref={burgerMenuRef}
         popover=""
-        className="fixed top-16 bg-primary flex-col gap-10 justify-center items-center w-full rounded-sm opacity-85"
+        className="fixed bg-transparent justify-center items-center w-full rounded-sm opacity-85"
+        onClick={() => burgerMenuRef.current?.hidePopover()}
       >
-        {menuItemsJsx}
+        <div className="bg-primary flex flex-col w-screen p-9 items-center rounded-sm gap-10">
+          {menuItemsJsx}
+        </div>
       </dialog>
     </>
   );

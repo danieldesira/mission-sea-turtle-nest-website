@@ -18,7 +18,7 @@ export default async function Scores({
   });
 
   return (
-    <div className="flex flex-col gap-3">
+    <>
       <header className="flex justify-between items-center flex-wrap">
         <h2 className="text-2xl font-bold">All-time Scores</h2>
         <section className="flex gap-3">
@@ -44,6 +44,6 @@ export default async function Scores({
         </span>
       )}
       <Paginator currentPage={currentPage} totalPages={totalPages} />
-    </div>
+    </>
   );
 }

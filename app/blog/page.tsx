@@ -4,7 +4,7 @@ import { getPosts } from "./services";
 export default async function Blog() {
   const { posts, found } = await getPosts();
   return (
-    <div className="flex flex-col gap-3">
+    <>
       <header className="flex justify-between items-center flex-wrap">
         <h2 className="text-2xl font-bold">Blog</h2>
       </header>
@@ -27,6 +27,6 @@ export default async function Blog() {
       ) : (
         <span className="text-lg font-bold">No blog posts yet...</span>
       )}
-    </div>
+    </>
   );
 }

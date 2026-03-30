@@ -52,8 +52,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen flex flex-col font-sans">
-          <header className="fixed w-full flex justify-between items-center bg-primary text-white p-4 opacity-85">
+        <div className="flex flex-col font-sans justify-between min-h-screen items-center gap-3">
+          <header className="w-full flex justify-between items-center bg-primary text-white p-4 opacity-85">
             <Image
               className="animate-bounce-once"
               src="https://turtle-quest.vercel.app/assets/favicon-B1ZwkIgi.svg"
@@ -63,8 +63,8 @@ export default function RootLayout({
             />
             <Menu />
           </header>
-          <main className="flex-1 p-4 my-20">{children}</main>
-          <footer className="fixed bottom-0 w-full bg-primary text-white p-4 flex gap-4 justify-center items-center opacity-85">
+          <main className="flex flex-col gap-3 max-w-screen overflow-auto p-3">{children}</main>
+          <footer className="w-full bg-primary text-white p-4 flex gap-4 justify-center items-center">
             {socialIcons.map(({ Icon, url }) => (
               <a key={url} href={url} target="_blank">
                 <Icon className="w-8 h-8" />
