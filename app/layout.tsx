@@ -63,7 +63,7 @@ export default function RootLayout({
             />
             <Menu />
           </header>
-          <main className="flex flex-col gap-3 max-w-screen overflow-auto p-3">{children}</main>
+          <main className="flex flex-col gap-3 max-w-screen max-h-[calc(100vh-150px)] overflow-auto p-3">{children}</main>
           <footer className="w-full bg-primary text-white p-4 flex gap-4 justify-center items-center">
             {socialIcons.map(({ Icon, url }) => (
               <a key={url} href={url} target="_blank">

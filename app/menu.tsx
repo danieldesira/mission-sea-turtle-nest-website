@@ -24,7 +24,7 @@ export default function Menu() {
     <Link
       key={url}
       href={url}
-      className={`hover:bg-pink-400 py-2 px-10 rounded-sm text-white text-lg font-bold ${currentRoute === url ? "bg-pink-400" : ""}`}
+      className={`hover:bg-pink-400 py-2 px-10 md:px-2 rounded-sm text-white text-lg font-bold ${currentRoute === url ? "bg-pink-400" : ""}`}
     >
       {label}
     </Link>
@@ -46,10 +46,10 @@ export default function Menu() {
         id="burgerMenu"
         ref={burgerMenuRef}
         popover=""
-        className="fixed bg-transparent justify-center items-center w-full rounded-sm opacity-85"
+        className="bg-transparent justify-center items-center min-h-screen w-full opacity-85 p-2"
         onClick={() => burgerMenuRef.current?.hidePopover()}
       >
-        <div className="bg-primary flex flex-col w-screen p-9 items-center rounded-sm gap-10">
+        <div className="bg-primary flex flex-col w-screen p-9 items-center rounded-lg gap-10">
           {menuItemsJsx}
         </div>
       </dialog>
