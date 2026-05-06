@@ -24,10 +24,7 @@ export default function Checkbox({ id, label }: Props) {
   };
 
   return (
-    <FilterField>
-      <label htmlFor={id} className="text-sm font-semibold">
-        {label}
-      </label>
+    <FilterField label={label} id={id}>
       <input
         type="checkbox"
         id={id}

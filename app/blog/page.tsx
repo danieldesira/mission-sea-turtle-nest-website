@@ -1,12 +1,15 @@
+import PageHeading from "../common/page-heading";
 import PostListing from "./post-listing";
 import { getPosts } from "./services";
+import WebNotifications from "./web-notifications";
 
 export default async function Blog() {
   const { posts, found } = await getPosts();
   return (
     <>
       <header className="flex justify-between items-center flex-wrap">
-        <h2 className="text-2xl font-bold">Blog</h2>
+        <PageHeading title="Blog" />
+        <WebNotifications />
       </header>
       {found ? (
         <div className="border border-primary rounded-sm overflow-auto p-2 flex flex-wrap gap-2">

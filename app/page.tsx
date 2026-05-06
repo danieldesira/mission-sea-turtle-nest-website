@@ -1,9 +1,9 @@
+import PageHeading from "./common/page-heading";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-3xl font-bold mb-4 text-primary">
-        Welcome to Mission Sea Turtle Nest community site!
-      </h2>
+      <PageHeading title="Welcome to Mission Sea Turtle Nest community site!" />
       <div className="flex flex-col gap-3 items-center">
         <p className="font-normal text-sm">
           I have been volunteering with patrols and nest watch on behalf of
@@ -30,8 +30,8 @@ export default function Home() {
           Josette Darmenia, Stephen Spiteri, Ana Feder, Sheila Adams, Joanna
           Pullicino Kent, Rachel Doyle, Roberta Farrugia Debono, Glenn Brough,
           Joe Conti, Corrine Wood, Liza Sountsova, Kamilla Boross and Liz
-          Gowland-Camilleri. And many others - it&apos;s impossible to list them all
-          here! These people have selflessly dedicated their time for
+          Gowland-Camilleri. And many others - it&apos;s impossible to list them
+          all here! These people have selflessly dedicated their time for
           safeguarding biodiversity and for that I wish to thank them
           wholeheartedly.
         </p>

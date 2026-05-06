@@ -27,10 +27,7 @@ export default function Dropdown({ id, label, options }: Props) {
   };
 
   return (
-    <FilterField>
-      <label htmlFor={id} className="text-sm font-semibold">
-        {label}
-      </label>
+    <FilterField id={id} label={label}>
       <select
         id={id}
         name={id}

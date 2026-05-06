@@ -1,11 +1,19 @@
 import type { PropsWithChildren } from "react";
 
-export default function SubmitButton({ children }: PropsWithChildren) {
+type Props = {
+  onClick: () => void;
+};
+
+export default function Button({
+  children,
+  onClick,
+}: PropsWithChildren<Props>) {
   return (
     <button
       role="button"
-      type="submit"
+      type="button"
       className="bg-primary rounded-sm w-fit py-2 px-3 cursor-pointer"
+      onClick={onClick}
     >
       {children}
     </button>

@@ -1,5 +1,6 @@
 import Checkbox from "../common/checkbox";
 import Dropdown from "../common/dropdown";
+import PageHeading from "../common/page-heading";
 import Paginator from "../common/paginator";
 import ScoreTable from "./score-table";
 import { getScores } from "./services";
@@ -20,7 +21,7 @@ export default async function Scores({
   return (
     <>
       <header className="flex justify-between items-center flex-wrap">
-        <h2 className="text-2xl font-bold">All-time Scores</h2>
+        <PageHeading title="All-time Scores" />
         <section className="flex gap-3">
           <Dropdown
             id="outcome"

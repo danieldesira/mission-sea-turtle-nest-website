@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PageHeading from "../common/page-heading";
 
 type TeamMember = {
   name: string;
@@ -19,9 +20,9 @@ const teamMembers = [
 export default function About() {
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-3xl font-bold mb-4">About Mission Sea Turtle Nest</h2>
+      <PageHeading title="About Mission Sea Turtle Nest" />
       <div className="flex flex-col gap-3 items-center">
-        <h3 className="text-2xl font-bold mb-4">Core Team</h3>
+        <h3 className="text-2xl font-bold mb-4 text-primary">Core Team</h3>
         <div className="flex gap-3 items-center">
           {teamMembers.map(({ name, role, bio, photoUrl }, index) => (
             <div
