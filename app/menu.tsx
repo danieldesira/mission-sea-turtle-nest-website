@@ -5,6 +5,7 @@ import "./menu.css";
 import { useRef } from "react";
 import { IoMenu } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import ThemeSwitcher from "./theme-switcher";
 
 type MenuItem = { url: string; label: string };
 
@@ -24,7 +25,7 @@ export default function Menu() {
     <Link
       key={url}
       href={url}
-      className={`hover:bg-pink-400 py-2 px-10 md:px-2 rounded-sm text-white text-lg font-bold ${currentRoute === url ? "bg-pink-400" : ""}`}
+      className={`bg-primary hover:bg-pink-400 py-2 px-10 md:px-2 rounded-sm text-white text-lg font-bold ${currentRoute === url ? " dark:bg-amber-800" : ""}`}
     >
       {label}
     </Link>
@@ -53,6 +54,7 @@ export default function Menu() {
           {menuItemsJsx}
         </div>
       </dialog>
+      <ThemeSwitcher />
     </>
   );
 }

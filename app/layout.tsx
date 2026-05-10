@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground dark:bg-dark-background dark:text-dark-foreground`}
       >
         <div className="flex flex-col font-sans justify-between min-h-screen items-center gap-3">
           <header className="w-full flex justify-between items-center bg-primary text-white p-4 opacity-85">
@@ -63,7 +63,9 @@ export default function RootLayout({
             />
             <Menu />
           </header>
-          <main className="flex flex-col gap-3 max-w-screen max-h-[calc(100vh-150px)] overflow-auto p-3">{children}</main>
+          <main className="flex flex-col gap-3 max-w-screen max-h-[calc(100vh-150px)] overflow-auto p-3">
+            {children}
+          </main>
           <footer className="w-full bg-primary text-white p-4 flex gap-4 justify-center items-center">
             {socialIcons.map(({ Icon, url }) => (
               <a key={url} href={url} target="_blank">
