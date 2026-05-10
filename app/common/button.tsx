@@ -12,7 +12,7 @@ export default function Button({
     <button
       role="button"
       type="button"
-      className="bg-primary rounded-sm w-fit py-2 px-3 cursor-pointer"
+      className="bg-primary hover:bg-pink-400 text-white rounded-sm w-fit py-2 px-3 cursor-pointer"
       onClick={onClick}
     >
       {children}
