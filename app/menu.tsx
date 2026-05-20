@@ -5,7 +5,7 @@ import "./menu.css";
 import { useRef } from "react";
 import { IoMenu } from "react-icons/io5";
 import { usePathname } from "next/navigation";
-import ThemeSwitcher from "./theme-switcher";
+import ThemeSwitcher from "./theme-switching/theme-switcher";
 
 type MenuItem = { url: string; label: string };
 
